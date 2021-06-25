@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './HeaderNavbar.module.scss';
-import HeaderNavbarItem from '../HeaderNavbarItem/HeaderNavbarItem.component';
+import NavbarItem from '../NavbarItem/NavbarItem.component';
 import { useLocation } from 'react-router-dom';
 
 const headerNavbarArr = [
@@ -17,7 +17,7 @@ const HeaderNavbar = () => {
   const renderItems = headerNavbarArr
     .filter(e => e.link !== path) // filter arr based on user location
     .map((e, index) => (
-      <HeaderNavbarItem
+      <NavbarItem
         textContent={e.textContent}
         link={e.link}
         key={index}
