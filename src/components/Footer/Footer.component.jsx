@@ -1,10 +1,13 @@
 import React from 'react';
 import classes from './Footer.module.scss';
+import FooterInfo from '../FooterInfo/FooterInfo.component';
+import FooterNavbar from '../FooterNavbar/FooterNavbar.component';
 
 const Footer = () => {
   return (
-    <div>
-      
+    <div className={classes}>
+      <FooterInfo />
+      <FooterNavbar />      
     </div>
   );
 };
