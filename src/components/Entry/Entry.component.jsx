@@ -5,10 +5,11 @@ import Image from '../Image/Image.component';
 const Entry = () => {
   return (
     <div className={classes}>
-      <Image 
+      <Image
         src='/img/entry/entry-icon.png'
         alt='entry-icon'
         className={classes}
+        onClick={() => {console.log('Hello')}}
       />
       <p className={classes}>Account</p>
     </div>
