@@ -1,33 +1,40 @@
+// styles for header and presentation content
 @mixin container {
   padding: 35px 80px
 }
-
-@media screen and (max-width: 1920px) and (min-width: 1441px) {  
-  .container {
-    padding: 60px 70px
-  }
+@mixin container1920 {
+  padding: 35px 70px
+}
+@mixin container1440 {
+  padding: 35px 60px
+}
+@mixin container1024 {
+  padding: 35px 50px
+}
+@mixin container768 {
+  padding: 35px 40px
+}
+@mixin container480 {
+  padding: 35px 30px
 }
 
-@media screen and (max-width: 1440px) and (min-width: 1025px) {  
-  .container {
-    padding: 50px 60px
-  }
+// styles for section content
+@mixin content {
+  padding: 100px 160px 60px;
+}
+@mixin content1920 {
+  padding: 270px 120px 60px; //
+}
+@mixin content1440 {
+  padding: 270px 100px 50px; //
+}
+@mixin content1024 {
+  padding: 270px 80px 50px; //
+}
+@mixin content768 {
+  padding: 270px 60px 40px; //
+}
+@mixin content480 {
+  padding: 270px 40px 40px; //
 }
 
-@media screen and (max-width: 1024px) and (min-width: 769px) {  
-  .container {
-    padding: 40px 50px
-  }
-}
-
-@media screen and (max-width: 768px) and (min-width: 481px) {  
-  .container {
-    padding: 30px 40px
-  }
-}
-
-@media screen and (max-width: 480px) {  
-  .container {
-    padding: 20px 30px
-  }
-}

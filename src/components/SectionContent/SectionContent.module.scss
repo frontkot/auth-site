@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+};
+
+.block {
+  max-width: 70%;
+  position: relative;
+}
+
+.blogLink {
+  text-decoration: none;
+  color: rgb(251, 215, 132);
+  font-size: 16px;
+  // font-size: 18px;
+}

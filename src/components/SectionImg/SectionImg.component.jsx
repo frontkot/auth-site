@@ -7,7 +7,7 @@ const SectionImg = ({
 }) => {
   return (
     <div className={classes[`${className}Block`]}>
-      <Image className={classes[`${className}Img`]} src={src} alt='section-img'/>
+      <Image className={`${className}Img`} src={src} alt='section-img'/>
     </div>
   );
 };
