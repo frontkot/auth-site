@@ -5,8 +5,9 @@ import HeaderNavbar from '../HeaderNavbar/HeaderNavbar.component';
 import Entry from '../Entry/Entry.component';
 
 const Header = () => {
+  const { headerContent } = classes;
   return (
-    <div className={classes}>
+    <div className={headerContent}>
       <Logo />
       <HeaderNavbar />
       <Entry />

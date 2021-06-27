@@ -8,15 +8,18 @@ import { checkIsOpen } from '../../store/modalWindow/selectors';
 const Entry = () => {
   const dispatch = useDispatch();
   const isOpen = useSelector(checkIsOpen);
+  const { entryBlock, entryIconBlock, entryIcon, entryText } = classes;
 
   return (
-    <div className={classes} onClick={() => dispatch(isOpenWindow(!isOpen))}>
-      <Image
-        src='/img/entry/entry-icon.png'
-        alt='entry-icon'
-        className={classes}
-      />
-      <p className={classes}>Account</p>
+    <div className={entryBlock} onClick={() => dispatch(isOpenWindow(!isOpen))}>
+      <div className={entryIconBlock}>
+        <Image
+          src='/img/entry/entry-icon.png'
+          alt='entry-icon'
+          className={entryIcon}
+        />
+      </div>
+      <p className={entryText}>Account</p>
     </div>
   );
 };

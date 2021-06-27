@@ -7,18 +7,23 @@ import Pagination from './components/Pagination/Pagination.component';
 import { useSelector } from 'react-redux';
 import { checkIsOpen } from './store/modalWindow/selectors';
 import ModalWindow from './components/ModalWindow/ModalWindow.component';
+import { useLocation } from 'react-router-dom';
 
 const App = () => {
   const isModalOpen = useSelector(checkIsOpen);
+  const location = useLocation();
+  const path = location.pathname;
   return (
     <div className="App">
-      {isModalOpen && <ModalWindow header='Do you want to sign out?' isEntry={false}/>}
-      
-      <Header />
-      <AppRoutes />
-      <Footer />
-      {/* <SocialNetworks /> */}
-      {/* <Pagination /> */}
+      <div className='container'>
+        {isModalOpen && <ModalWindow header='Do you want to sign out?' isEntry={false}/>}
+        
+        {path !== '/' &&  <Header />}
+        <AppRoutes />
+        <Footer />
+        {/* <SocialNetworks /> */}
+        {/* <Pagination /> */}
+      </div>
     </div>
   );
 }

@@ -1,0 +1,15 @@
+.navbarItem {
+  list-style-type: none;
+  &Link {
+    margin: 0 20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    &:hover {
+      transition: .5s;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.748);
+      padding-bottom: 20px;
+    }
+  };
+
+}

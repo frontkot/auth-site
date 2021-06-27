@@ -7,7 +7,7 @@ const NavbarItem = ({
 }) => {
   return (
     <li className={classes[className]}>
-      <Link to={link}>{textContent}</Link>
+      <Link to={link} className={classes[`${className}Link`]}>{textContent}</Link>
     </li>
   );
 };
