@@ -20,7 +20,7 @@ const EntryForm = () => {
     <Formik 
       initialValues={{ name: '', email: '' }}
       validationSchema={validationSchema}
-      onSubmit={}
+      onSubmit={() => {}}
     >
       {({ errors, touched }) => (
         <Form className={classes}>
