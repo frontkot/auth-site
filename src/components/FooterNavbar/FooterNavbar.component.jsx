@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './FooterNavbar.module.scss';
 import NavbarItem from '../NavbarItem/NavbarItem.component';
-import FooterNavbarTitle from '../FooterNavbarTitle/FooterNavbarTitle.component';
+import SectionElement from '../SectionElement/SectionElement.component';
 
 const blogsArr = [
   {textContent: 'About MNTN', link: ''},
@@ -18,13 +18,14 @@ const MNTNArr = [
 ]
 
 const FooterNavbar = () => {
+  const { navbarBlock, navbarContainer, navbar,  } = classes;
 
   const blogsRenderItems = blogsArr.map((e, index) => (
     <NavbarItem
       key={index}
       textContent={e.textContent}
       link={e.link}
-      className={classes}
+      className='footerItem'
     />
   ))
 
@@ -33,21 +34,21 @@ const FooterNavbar = () => {
       key={index}
       textContent={e.textContent}
       link={e.link}
-      className={classes}
+      className='footerItem'
     />
   ))
 
   return (
-    <div className={classes}>
-      <div className={classes}>
-        <FooterNavbarTitle textContent='More on The Blog' />
-        <ul className={classes}>
+    <div className={navbarBlock}>
+      <div className={navbarContainer}>
+        <SectionElement className='navbarTitle' textContent='More on The Blog' tag='h3'/>
+        <ul className={navbar}>
           {blogsRenderItems}
         </ul>
       </div>
-      <div className={classes}>
-        <FooterNavbarTitle textContent='More on MNTN' />
-        <ul className={classes}>
+      <div className={navbarContainer}>
+        <SectionElement className='navbarTitle' textContent='More on MNTN' tag='h3'/>
+        <ul className={navbar}>
           {MNTNRenderItems}
         </ul>
       </div>

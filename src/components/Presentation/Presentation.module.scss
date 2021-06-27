@@ -19,7 +19,13 @@
     color: white;
     text-decoration: none;
     font-size: 18px;
-    
+    position: relative;
+    &:after {
+      content: url(../../theme//img/arrow/bottom-arrow.svg);
+      position: absolute;
+      margin-left: 16px;
+      top: -10%;
+    }
   }
 
 }

@@ -27,15 +27,12 @@
   }
 }
 
-// original
-
 .section {
   &Title {
     padding-left: 96px;
   }
   &Num {
     position: absolute;
-    // font-size: 240px;
     font-size: 180px;
     font-weight: 700;
     opacity: 0.08;
@@ -45,15 +42,31 @@
   &Header {
     margin: 27px 0;
     font-size: 54px;
-    // font-size: 64px;
     font-weight: 600;
   }
   &Text {
     font-size: 14px;
-    // font-size: 18px;
     margin-bottom: 27px;
     font-weight: 700;
     line-height: 24px;
-    // line-height: 32px;
   }
+}
+
+.logoText {
+  padding-top: 24px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+.copyrightText {
+  opacity: .5;
+  font-size: 15px;
+}
+
+.navbarTitle {
+  color: rgb(251, 215, 132);
+  font-size: 20px;
+  font-weight: 700;
+  padding-bottom: 15px;
 }
