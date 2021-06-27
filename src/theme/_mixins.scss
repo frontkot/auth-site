@@ -1,10 +1,5 @@
-.App {
-  background-color: rgb(11, 29, 38);
-  color: white;
-}
-
-.container {
-  padding: 65px 80px
+@mixin container {
+  padding: 35px 80px
 }
 
 @media screen and (max-width: 1920px) and (min-width: 1441px) {  
@@ -36,4 +31,3 @@
     padding: 20px 30px
   }
 }
-

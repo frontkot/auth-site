@@ -1,4 +1,4 @@
-import './App.scss';
+import './theme/App.scss';
 import Header from './components/Header/Header.component';
 import AppRoutes from './routes/AppRoutes/AppRoutes.component';
 import Footer from './components/Footer/Footer.component';
@@ -9,13 +9,15 @@ import { checkIsOpen } from './store/modalWindow/selectors';
 import ModalWindow from './components/ModalWindow/ModalWindow.component';
 import { useLocation } from 'react-router-dom';
 
+// style={{ backgroundImage: 'url(img/background/main-bg.jpg)'}}
+
 const App = () => {
   const isModalOpen = useSelector(checkIsOpen);
   const location = useLocation();
   const path = location.pathname;
   return (
     <div className="App">
-      <div className='container'>
+      {/* <div className='container'> */}
         {isModalOpen && <ModalWindow header='Do you want to sign out?' isEntry={false}/>}
         
         {path !== '/' &&  <Header />}
@@ -23,7 +25,7 @@ const App = () => {
         <Footer />
         {/* <SocialNetworks /> */}
         {/* <Pagination /> */}
-      </div>
+      {/* </div> */}
     </div>
   );
 }

@@ -1,0 +1,25 @@
+.present {
+  &Header {
+    font-size: 88px;
+    font-weight: 600;
+    margin: 32px 0;
+  };
+  &Title {
+    color: rgb(251, 215, 132);
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 6px;
+    padding-left: 104px;
+    position: relative;
+    &::before {
+      content: '';
+      width: 72px;
+      height: 2px;
+      background-color: rgb(251, 215, 132);
+      position: absolute;
+      left: 0;
+      top: 10px;
+    }
+  }
+}
