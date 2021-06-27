@@ -4,8 +4,9 @@ import FooterInfo from '../FooterInfo/FooterInfo.component';
 import FooterNavbar from '../FooterNavbar/FooterNavbar.component';
 
 const Footer = () => {
+  const { container } = classes;
   return (
-    <div className={classes}>
+    <div className={container}>
       <FooterInfo />
       <FooterNavbar />      
     </div>

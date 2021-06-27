@@ -1,0 +1,11 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.logo {
+  &Block {
+    max-width: 50%;
+  }
+}

@@ -1,0 +1,12 @@
+@import "src/theme/_mixins";
+
+.sectionContainer {
+  @include content();
+  display: grid;
+  &RightSide {
+    grid-template-columns: 60% 40%;
+  }
+  &LeftSide {
+    grid-template-columns: 40% 60%;
+  }
+}

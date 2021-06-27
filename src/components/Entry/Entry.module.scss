@@ -1,0 +1,23 @@
+.entry {
+  &Block {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &:hover img {
+      animation: rotate-center 0.8s ease-in-out both;
+    }
+  };
+  &Icon {
+    transition: 0.5s;
+    &Block {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+    }
+  }
+  &Text {
+    margin: 0;
+  }
+}
+
+@keyframes rotate-center{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}

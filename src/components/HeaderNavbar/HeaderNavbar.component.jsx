@@ -13,6 +13,7 @@ const headerNavbarArr = [
 const HeaderNavbar = () => {
   const location = useLocation();
   const path = location.pathname;
+  const { navbar } = classes;
 
   const renderItems = headerNavbarArr
     .filter(e => e.link !== path) // filter arr based on user location
@@ -21,11 +22,12 @@ const HeaderNavbar = () => {
         textContent={e.textContent}
         link={e.link}
         key={index}
+        className='navbarItem'
       />
     ))
 
   return (
-    <ul className={classes}>
+    <ul className={navbar}>
       {renderItems}
     </ul>
   );
