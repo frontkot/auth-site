@@ -1,0 +1,1 @@
+export const checkIsOpen = (state) => state.modalWindow.isOpen;
