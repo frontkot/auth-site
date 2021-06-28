@@ -5,6 +5,7 @@ import * as yup from "yup";
 import { useDispatch } from 'react-redux';
 import { userLogin } from '../../store/user/actions';
 import { isOpenWindow } from '../../store/modalWindow/actions';
+import { toastr } from "react-redux-toastr";
 
 const validationSchema = yup.object().shape({
   name: yup
@@ -24,9 +25,10 @@ const EntryForm = () => {
     const user = {name: values.name, email: values.email};
     dispatch(isOpenWindow(false))
     dispatch(userLogin(user));
+    toastr.success('You are logged in', `Hello, ${user.name}`)
   };
 
-  const { container, field, submit } = classes;
+  const { container, field, submit, errorMsg } = classes;
 
 
   return (
@@ -45,7 +47,7 @@ const EntryForm = () => {
 
           />
           {errors.name && touched.name ? (
-            <div className={classes}>{errors.name}</div>
+            <div className={errorMsg}>{errors.name}</div>
           ) : null}
 
           <Field
@@ -55,7 +57,7 @@ const EntryForm = () => {
             className={field}
           />
           {errors.email && touched.email ? (
-            <div className={classes}>{errors.email}</div>
+            <div className={errorMsg}>{errors.email}</div>
           ) : null}
 
           <Field 

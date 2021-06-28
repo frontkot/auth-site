@@ -6,10 +6,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { checkIsOpen } from '../../store/modalWindow/selectors';
 import { isOpenWindow } from '../../store/modalWindow/actions';
 import { getIsLogin } from '../../store/user/selectors';
-import { userLogout } from '../../store/user/actions';
+import { userLogout, userLogin } from '../../store/user/actions';
+import { toastr } from "react-redux-toastr";
+import { GoogleLogin } from 'react-google-login';
+import SectionElement from '../SectionElement/SectionElement.component';
 
 const ModalWindow = () => {
-  const { modalWindow, modalBlock, modalHeader, modalContent } = classes;
+  const { modalWindow, modalBlock, modalHeader, modalContent, signInBlock } = classes;
   const dispatch = useDispatch();
   const isOpen = useSelector(checkIsOpen);
   const isLogin = useSelector(getIsLogin);
@@ -19,7 +22,18 @@ const ModalWindow = () => {
   const signOut = () => {
     checkIsModalWindow(false);
     dispatch(userLogout());
-    alert('You are sign out')
+    toastr.warning('You are logged out', 'We will miss you')
+  }
+
+  const responseGoogle = (response) => {
+    const userData = response;
+    const userEmail = userData.dt.Nt;
+    const userName = userData.dt.uU;
+    const user = {name: userName, email: userEmail};
+
+    checkIsModalWindow(false);
+    dispatch(userLogin(user))
+    toastr.success('You are logged in', `Hello, ${user.name}`)
   }
 
   return (
@@ -34,7 +48,17 @@ const ModalWindow = () => {
                 <Button className='modalButton' textContent='No' onClick={() => checkIsModalWindow(!isOpen)}/>
               </div>
             :
+            <div className={signInBlock}>
+              <GoogleLogin
+                clientId='692131150771-m896e1id3jjnecuntnuqr1albrfbibpl.apps.googleusercontent.com'
+                buttonText='Login'
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+                cookiePolicy={'single_host_origin'}
+              />
+              <SectionElement tag='p' textContent='or' className='signInText' />
               <EntryForm />
+            </div>
         }
       </div>
     </div>
