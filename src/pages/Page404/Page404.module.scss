@@ -1,0 +1,36 @@
+@import "src/theme/mixins";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  height: calc(100vh - 75px - 325px);
+  padding: 20px 0;
+  text-align: center;
+  background-size: cover;
+}
+.header {
+  margin-top: 50px;
+  color: white;
+  font-weight: 700;
+  font-size: 64px;
+}
+.text {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  color: white;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+@media screen and (min-width: 641px) and (max-width: 960px) {
+  .container {
+    height: calc(100vh - 102px - 230px);
+  }
+}
+@media screen and (max-width: 640px) {
+  .container {
+    height: calc(100vh - 92px);
+  }
+}

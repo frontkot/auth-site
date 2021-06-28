@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.field {
+  margin: 10px 15px;
+  min-width: 70%;
+  outline: none;
+  padding: 7px 10px;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  &:focus {
+    border: 2px solid rgb(98, 156, 255);
+  }
+}
+
+.submit {
+  padding: 10px 35px;
+  margin: 20px 0;
+  color: white;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 18px;
+  outline: none;
+  transition: 0.3s;
+  background-color: transparent;
+  cursor: pointer;
+  &:hover {
+    background-color: rgb(88, 88, 88);
+  }
+}

@@ -1,6 +1,12 @@
+@import './mixins';
+
 .App {
   background-color: #0b1d26;
   color: white;
+  &__other-page {
+    @include container();
+  }
 }
+
 
 

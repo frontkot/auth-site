@@ -2,6 +2,9 @@ import React from 'react';
 import classes from './EntryForm.module.scss';
 import { Formik, Form, Field } from 'formik';
 import * as yup from "yup";
+import { useDispatch } from 'react-redux';
+import { userLogin } from '../../store/user/actions';
+import { isOpenWindow } from '../../store/modalWindow/actions';
 
 const validationSchema = yup.object().shape({
   name: yup
@@ -16,20 +19,30 @@ const validationSchema = yup.object().shape({
 })
 
 const EntryForm = () => {
+  const dispatch = useDispatch();
+  const submitLogin = (values) => {
+    const user = {name: values.name, email: values.email};
+    dispatch(isOpenWindow(false))
+    dispatch(userLogin(user));
+  };
+
+  const { container, field, submit } = classes;
+
+
   return (
     <Formik 
       initialValues={{ name: '', email: '' }}
       validationSchema={validationSchema}
-      onSubmit={() => {}}
+      onSubmit={submitLogin}
     >
       {({ errors, touched }) => (
-        <Form className={classes}>
+        <Form className={container}>
           <Field
             type='text'
             name='name'
             placeholder='Your name'
-            label='Name'
-            className={classes}
+            className={field}
+
           />
           {errors.name && touched.name ? (
             <div className={classes}>{errors.name}</div>
@@ -39,8 +52,7 @@ const EntryForm = () => {
             type='email'
             name='email'
             placeholder='Your email'
-            label='Email'
-            className={classes}
+            className={field}
           />
           {errors.email && touched.email ? (
             <div className={classes}>{errors.email}</div>
@@ -50,7 +62,7 @@ const EntryForm = () => {
             type='submit'
             name='submit'
             value='Sign in'
-            className={classes}
+            className={submit}
           />
         </Form>
       )}

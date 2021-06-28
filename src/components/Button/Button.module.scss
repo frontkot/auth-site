@@ -1,3 +1,13 @@
-.modalButton {
-  
+.modalButton, .page404Button {
+  padding: 10px 35px;
+  color: white;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 18px;
+  outline: none;
+  transition: 0.3s;
+  background-color: transparent;
+  cursor: pointer;
+  &:hover {
+    background-color: rgb(88, 88, 88);
+  }
 }

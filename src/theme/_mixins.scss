@@ -1,21 +1,21 @@
 // styles for header and presentation content
 @mixin container {
-  padding: 35px 80px
+  padding: 35px 80px 0;
 }
 @mixin container1920 {
-  padding: 35px 70px
+  padding: 35px 70px 0;
 }
 @mixin container1440 {
-  padding: 35px 60px
+  padding: 35px 60px 0;
 }
 @mixin container1024 {
-  padding: 35px 50px
+  padding: 35px 50px 0;
 }
 @mixin container768 {
-  padding: 35px 40px
+  padding: 35px 40px 0;
 }
 @mixin container480 {
-  padding: 35px 30px
+  padding: 35px 30px 0;
 }
 
 // styles for section content

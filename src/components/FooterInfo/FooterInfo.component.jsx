@@ -4,7 +4,7 @@ import Logo from '../Logo/Logo.component';
 import SectionElement from '../SectionElement/SectionElement.component';
 
 const FooterInfo = () => {
-  const { block, logoBlock, logoText, copyrightText } = classes;
+  const { block, logoBlock } = classes;
   return (
     <div className={block}>
       <div className={logoBlock}>

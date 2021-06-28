@@ -4,11 +4,12 @@ import SectionImg from '../SectionImg/SectionImg.component';
 import SectionContent from '../SectionContent/SectionContent.component';
 
 const SectionItem = ({
-  num, imgSrc, title, header, text, link
+  num, imgSrc, title, header, text, link, anchor
 }) => {
   const { sectionContainer, sectionContainerRightSide, sectionContainerLeftSide } = classes;
   return (
-    <div className={num % 2 ? // detect second section for set needed className
+    <div id={anchor}
+      className={num % 2 ? // detect second section for set needed className
         `${sectionContainer} ${sectionContainerRightSide}` 
       : 
         `${sectionContainer} ${sectionContainerLeftSide}`}
@@ -21,7 +22,7 @@ const SectionItem = ({
         :
         <>
           <SectionImg src={imgSrc} className='section'/>
-          <SectionContent title={title} header={header} text={text} num={num}/>
+          <SectionContent title={title} header={header} text={text} num={num} link={link}/>
         </>
       }
     </div>

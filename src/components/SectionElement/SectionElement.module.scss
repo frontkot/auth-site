@@ -36,8 +36,8 @@
     font-size: 180px;
     font-weight: 700;
     opacity: 0.08;
-    top: -20%;
-    left: -20%;
+    top: 0;
+    left: 0;
   }
   &Header {
     margin: 27px 0;
@@ -69,4 +69,16 @@
   font-size: 20px;
   font-weight: 700;
   padding-bottom: 15px;
+}
+
+.dev {
+  &Header {
+    font-size: 30px;
+    font-weight: 600;
+  }
+  &Text {
+    padding-top: 20px;
+    font-size: 18px;
+    font-weight: 700;
+  }
 }

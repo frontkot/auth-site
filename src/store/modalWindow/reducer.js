@@ -1,7 +1,7 @@
 import { TOGGLE_IS_OPEN } from './types';
 
 const initialState = {
-    isOpen: false,
+  isOpen: false,
 }
 
 const reducer = (state = initialState, action) => {
