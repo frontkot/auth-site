@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Presentation.module.scss';
-import { HashLink, NavHashLink } from 'react-router-hash-link';
+import { NavHashLink } from 'react-router-hash-link';
 import Header from '../Header/Header.component';
 import SectionElement from '../SectionElement/SectionElement.component';
 
