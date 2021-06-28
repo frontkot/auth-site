@@ -7,6 +7,7 @@ import { checkIsOpen } from '../../store/modalWindow/selectors';
 import { isOpenWindow } from '../../store/modalWindow/actions';
 import { getIsLogin } from '../../store/user/selectors';
 import { userLogout } from '../../store/user/actions';
+import { toastr } from "react-redux-toastr";
 
 const ModalWindow = () => {
   const { modalWindow, modalBlock, modalHeader, modalContent } = classes;
@@ -19,7 +20,7 @@ const ModalWindow = () => {
   const signOut = () => {
     checkIsModalWindow(false);
     dispatch(userLogout());
-    alert('You are sign out')
+    toastr.warning('You are logged out', 'We will miss you')
   }
 
   return (

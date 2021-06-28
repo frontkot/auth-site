@@ -5,6 +5,7 @@ import * as yup from "yup";
 import { useDispatch } from 'react-redux';
 import { userLogin } from '../../store/user/actions';
 import { isOpenWindow } from '../../store/modalWindow/actions';
+import { toastr } from "react-redux-toastr";
 
 const validationSchema = yup.object().shape({
   name: yup
@@ -24,6 +25,7 @@ const EntryForm = () => {
     const user = {name: values.name, email: values.email};
     dispatch(isOpenWindow(false))
     dispatch(userLogin(user));
+    toastr.success('You are logged in', `Hello, ${values.name}`)
   };
 
   const { container, field, submit } = classes;
