@@ -22,9 +22,9 @@ const AppRoutes = () => {
       <Route exact path='/blog-3' render={DevPage} />
       <Route exact path='/about-mntn' render={DevPage} />  
       <Route exact path='/contributors&writers' render={DevPage} />  
-      <Route exact path='/write-for-us' render={DevPage} />  
+      <ProtectedRoute authenticated={isLogin} exact path='/write-for-us' component={DevPage} />
       <Route exact path='/contact-us' render={DevPage} />
-      <ProtectedRoute authenticated={isLogin} exact path='/privacy-policy' component={DevPage} />
+      <Route exact path='/privacy-policy' render={DevPage} />  
       <Route exact path='/the-team' render={DevPage} />  
       <Route exact path='/jobs' render={DevPage} />  
       <Route exact path='/press' render={DevPage} />  
