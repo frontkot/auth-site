@@ -11,19 +11,21 @@
     align-items: center;
     justify-content: center;
     background-color: rgba(88, 88, 88, 0.6);
+    z-index: 1;
   }
   &Block {
     max-width: 500px;
     border-radius: 10px;
-    background-color: #2b8885fa;
+    background-color: #0b1d26;
     color: white;
+    min-width: 300px;
   }
   &Header{
     margin: 0;
-    padding: 25px 35px;
+    padding: 20px 35px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    text-align: left;
+    text-align: center;
     font-size: 22px;
   }
 

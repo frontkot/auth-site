@@ -15,7 +15,7 @@ const App = () => {
   const path = location.pathname;
   return (
     <div className={path !== '/' ? 'App App__other-page' : 'App'}>
-      {isModalOpen && <ModalWindow header='Do you want to sign out?' isEntry={false}/>}
+      {isModalOpen && <ModalWindow />}
       
       {path !== '/' &&  <Header />}
       <AppRoutes />

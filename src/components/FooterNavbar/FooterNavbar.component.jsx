@@ -2,11 +2,13 @@ import React from 'react';
 import classes from './FooterNavbar.module.scss';
 import NavbarItem from '../NavbarItem/NavbarItem.component';
 import SectionElement from '../SectionElement/SectionElement.component';
+import { useSelector } from 'react-redux';
+import { getIsLogin } from '../../store/user/selectors';
 
 const blogsArr = [
   {textContent: 'About MNTN', link: '/about-mntn'},
   {textContent: 'Contributors & Writers', link: '/contributors&writers'},
-  {textContent: 'Write For Us', link: '/write-for-us'},
+  {textContent: 'Write For Us', link: '/write-for-us', isUser: true},
   {textContent: 'Contact Us', link: '/contact-us'},
   {textContent: 'Privacy Policy', link: '/privacy-policy'},
 ];
@@ -19,8 +21,10 @@ const MNTNArr = [
 
 const FooterNavbar = () => {
   const { navbarBlock, navbarContainer, navbar,  } = classes;
+  const isLogin = useSelector(getIsLogin);
+  const blogsArrIsUser = isLogin ? blogsArr : blogsArr.filter(e => !e.isUser); // different arr for login users
 
-  const blogsRenderItems = blogsArr.map((e, index) => (
+  const blogsRenderItems = blogsArrIsUser.map((e, index) => (
     <NavbarItem
       key={index}
       textContent={e.textContent}
