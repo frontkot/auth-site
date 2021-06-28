@@ -1,20 +1,18 @@
 .container {
   display: flex;
-  align-items: center;
   justify-content: center;
+  position: relative;
+  padding-top: 80px;
 };
 
 .block {
-  max-width: 70%;
-  position: relative;
+  max-width: 80%;
 }
 
-// *original 
 .blogLink {
   text-decoration: none;
   color: rgb(251, 215, 132);
   font-size: 16px;
-  // font-size: 18px;
   position: relative;
   &:after {
     content: url(../../theme//img/arrow/right-arrow.svg);

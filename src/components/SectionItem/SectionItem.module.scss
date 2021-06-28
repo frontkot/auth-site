@@ -5,8 +5,10 @@
   display: grid;
   &RightSide {
     grid-template-columns: 60% 40%;
+    grid-gap: 20px;
   }
   &LeftSide {
     grid-template-columns: 40% 60%;
+    grid-gap: 20px;
   }
 }
