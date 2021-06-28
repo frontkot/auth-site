@@ -14,7 +14,7 @@ const App = () => {
   const location = useLocation();
   const path = location.pathname;
   return (
-    <div className="App">
+    <div className={path !== '/' ? 'App App__other-page' : 'App'}>
       {isModalOpen && <ModalWindow header='Do you want to sign out?' isEntry={false}/>}
       
       {path !== '/' &&  <Header />}

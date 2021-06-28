@@ -1,7 +1,15 @@
 @import "src/theme/_mixins";
 
 .container {
-  @include content();
-  display: grid;
-  grid-template-columns: 60% 40%;
+  &MainPage, &OtherPage {
+    display: grid;
+    grid-template-columns: 60% 40%;
+  }
+  &MainPage {
+    @include content();
+  }
+  &OtherPage {
+    padding: 100px 80px 60px;
+
+  }
 }

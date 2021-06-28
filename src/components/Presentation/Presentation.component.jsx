@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Presentation.module.scss';
-import { HashLink } from 'react-router-hash-link';
+import { HashLink, NavHashLink } from 'react-router-hash-link';
 import Header from '../Header/Header.component';
 import SectionElement from '../SectionElement/SectionElement.component';
 
@@ -14,7 +14,7 @@ const Presentation = () => {
         <div className={presentContent}>
           <SectionElement className='presentTitle' textContent='a hiking guide' tag='p' />
           <SectionElement className='presentHeader' textContent='Be prepared for the Mountains and beyond!' tag='h2' />
-          <HashLink className={presentLink} smooth to='#01-step'>scroll down</HashLink>
+          <NavHashLink className={presentLink} smooth to='#section-1'>scroll down</NavHashLink>
         </div>
       </div>
     </div>

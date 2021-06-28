@@ -4,17 +4,17 @@ import NavbarItem from '../NavbarItem/NavbarItem.component';
 import SectionElement from '../SectionElement/SectionElement.component';
 
 const blogsArr = [
-  {textContent: 'About MNTN', link: ''},
-  {textContent: 'Contributors & Writers', link: ''},
-  {textContent: 'Write For Us', link: ''},
-  {textContent: 'Contact Us', link: ''},
-  {textContent: 'Privacy Policy', link: ''},
+  {textContent: 'About MNTN', link: '/about-mntn'},
+  {textContent: 'Contributors & Writers', link: '/contributors&writers'},
+  {textContent: 'Write For Us', link: '/write-for-us'},
+  {textContent: 'Contact Us', link: '/contact-us'},
+  {textContent: 'Privacy Policy', link: '/privacy-policy'},
 ];
 
 const MNTNArr = [
-  {textContent: 'The team', link: ''},
-  {textContent: 'Jobs', link: ''},
-  {textContent: 'Press', link: ''},
+  {textContent: 'The team', link: '/the-team'},
+  {textContent: 'Jobs', link: '/jobs'},
+  {textContent: 'Press', link: '/press'},
 ]
 
 const FooterNavbar = () => {
