@@ -22,7 +22,7 @@ const App = () => {
       <AppRoutes />
       <Footer />
       <ReduxToastr
-        timeOut={4000}
+        timeOut={3000}
         newestOnTop
         preventDuplicates
         position="top-right"
