@@ -25,7 +25,7 @@ const ModalWindow = () => {
     toastr.warning('You are logged out', 'We will miss you')
   }
 
-  const responseGoogle = (response) => {
+  const onSuccesGoogle = (response) => {
     const userData = response;
     const userEmail = userData.dt.Nt;
     const userName = userData.dt.uU;
@@ -34,6 +34,10 @@ const ModalWindow = () => {
     checkIsModalWindow(false);
     dispatch(userLogin(user))
     toastr.success('You are logged in', `Hello, ${user.name}`)
+  }
+
+  const onFailureGoogle = (response) => {
+    console.log(response);
   }
 
   return (
@@ -52,8 +56,8 @@ const ModalWindow = () => {
               <GoogleLogin
                 clientId='692131150771-m896e1id3jjnecuntnuqr1albrfbibpl.apps.googleusercontent.com'
                 buttonText='Login'
-                onSuccess={responseGoogle}
-                onFailure={responseGoogle}
+                onSuccess={onSuccesGoogle}
+                onFailure={onFailureGoogle}
                 cookiePolicy={'single_host_origin'}
               />
               <SectionElement tag='p' textContent='or' className='signInText' />
